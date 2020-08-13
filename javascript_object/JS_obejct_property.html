@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<title>JavaScript Object</title>
+</head>
+
+<body>
+
+	<h1>객체의 프로퍼티 참조</h1>
+
+	<script>
+		var person = {
+			name: "홍길동",			// 이름 프로퍼티를 정의함.
+			birthday: "030219",		// 생년월일 프로퍼티를 정의함.
+			pId: "1234567",			// 개인 id 프로퍼티를 정의함.
+			fullId: function() {	// 생년월일과 개인 id를 합쳐서 주민등록번호를 반환함.
+				return this.birthday + this.pId;
+			}
+		};
+
+		document.write(person.name + "<br>");	// 홍길동
+		document.write(person["name"]+"<br>");			// 홍길동
+        document.write(person.fullId());
+        document.write(person.fullId);
+
+	</script>
+	
+</body>
+
+</html>

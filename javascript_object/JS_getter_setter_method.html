@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<title>JavaScript Object Method</title>
+</head>
+
+<body>
+
+	<h1>getter 메소드</h1>
+
+	<script>
+		var gildong = { age: 18 };
+		document.write(gildong.age + "<br>");	// 18
+
+		Object.defineProperty(gildong, "americanAge", { get: function() { return this.age - 1; } });
+		document.write(gildong.americanAge);	// 17
+        // getter 메소드는 특정 프로퍼티의 값을 받아오기 위한 메소드이다.
+        // 자바스크립트는 객체의 프로퍼티 값에 접근할 때 getter메소드에 아무런 인수를 전달하지 않고 호출한다.
+        document.write("<br>age -> "+gildong.age);
+    </script>
+    
+
+    <h1>setter 메소드</h1>
+
+    <script>
+        var donggil = { age: 18 };
+
+        donggil.age = 20;
+        document.write(donggil.age + "<br>");	// 20
+
+        Object.defineProperty(donggil, "changeAge", { set: function(n) { this.age = this.age - n; } });
+        donggil.changeAge = 5;
+        document.write(donggil.age);			// 15
+        // setter 메소드는 특정 프로퍼티의 값을 설정하기 위한 메소드이다.
+        // 자바스크립트는 객체의 프로퍼티 값을 변경할 때 setter메소드에 대입하고자 하는 값을 인수로 전달하여 호출한다.
+    </script>
+	
+</body>
+
+</html>
