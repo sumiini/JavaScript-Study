@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<title>JavaScript DOM Element</title>
+</head>
+
+<body>
+
+	<h1>DOM 요소의 스타일 변경</h1>
+    <p id="text">이 문자열의 기본색은 검정색입니다!</p>
+    <button onclick="changeRedColor()">빨간색으로 바꾸기</button>
+    <button onclick="changeBlackColr()">검정색으로 바꾸기</button>
+
+     <script>
+         var variable=document.getElementById("text");
+
+         function changeRedColor(){
+             variable.style.color="red";
+         }
+
+         function changeBlackColr(){
+             variable.style.color="black";
+         }
+     </script>
+	
+	
+</body>
+
+</html>
