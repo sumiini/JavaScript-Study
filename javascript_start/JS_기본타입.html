@@ -1,0 +1,51 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>javascript output</title>
+    </head>
+    <body>
+        <h1>숫자 타입</h1>
+        <p id="number"></p>
+
+        <h1>문자열</h1>
+        <p id="string"></p>
+
+        <h1>boolean</h1>
+        <p id="result"></p>
+
+        <h1>symbol</h1>
+        <p id="symbol"></p>
+
+        <h1>typeof 연산자</h1>
+        <p id="type"></p>
+        <script>
+            var firstNum=10;
+            var secondNum=10.00;
+            var thirdNum=10e6;
+            var fourthNum=10e-6;
+
+            document.getElementById("number").innerHTML=firstNum+"<br>"
+            +secondNum+"<br>"+thirdNum+"<br>"+fourthNum;
+
+            var firstStr="이것도 문자열입니다.";
+            var secondStr='이것도 문자열입니다.';
+            var tirdStr="나의 이름은'홍길동'이야.";
+            var fourthStr='나의 이름은"홍길동"이야.';
+
+            document.getElementById("string").innerHTML=firstStr+"<br>"
+            +secondStr+"<br>"+tirdStr+"<br>"+fourthStr;
+
+            var fifthNum=11;
+            document.getElementById("result").innerHTML = (firstNum == fifthNum); 
+
+            var sym=Symbol("javascript");
+            var symObj=Object(sym);
+
+            document.getElementById("symbol").innerHTML=(typeof sym)+"<br>"+(typeof symObj);
+
+            document.getElementById("type").innerHTML=(typeof 10)+"<br>"+(typeof "문자열") + "<br>"+(typeof true) + "<br>"+
+            (typeof undefined)+(typeof null);
+        </script>
+
+    </body>
+</html>
