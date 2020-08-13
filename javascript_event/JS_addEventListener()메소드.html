@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<title>JavaScript EventListener</title>
+</head>
+
+<body>
+
+	<h1>addEventListener() 메소드</h1>
+	<button id="btn">텍스트 보여주기!</button>
+    <p id="text"></p>
+    
+
+    <h1>여러 개의 이벤트 리스너 등록</h1>
+    <p>아래 버튼에 마우스를 올리거나 클릭 (클릭은 이벤트 삭제)</p>
+    <button id="multi_btn">버튼</button>
+    <p id="multi_text"></p>
+
+	<script>
+		var showBtn = document.getElementById("btn");	// 아이디가 "btn"인 요소를 선택함.
+		showBtn.addEventListener("click", showText);	// 선택한 요소에 click 이벤트 리스너를 등록함.
+		function showText() {
+			document.getElementById("text").innerHTML = "짜잔~!! 텍스트가 나타났어요!!";
+		}
+
+        var bottn=document.getElementById("multi_btn");
+        bottn.addEventListener("click",clickBtn);
+        bottn.addEventListener("mouseover",mouseoverBtn);
+        bottn.addEventListener("mouseout",mouseoutBtn);
+
+        function clickBtn() {
+			bottn.removeEventListener("mouseover", mouseoverBtn);
+			bottn.removeEventListener("mouseout", mouseoutBtn);
+			document.getElementById("multi_text").innerHTML = "이벤트 리스너가 삭제되었어요!";
+		}
+
+        function mouseoverBtn(){
+            document.getElementById("multi_text").innerHTML="버튼 위에 마우스가 있네요.";
+        }
+        
+        function mouseoutBtn(){
+            document.getElementById("multi_text").innerHTML="버튼 밖으로 마우스가 나갔어요.";
+        }
+
+	</script>
+		
+</body>
+
+</html>
