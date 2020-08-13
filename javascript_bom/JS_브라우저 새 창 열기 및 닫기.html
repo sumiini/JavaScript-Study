@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<title>JavaScript BOM Window Object</title>
+</head>
+
+<body>
+
+	<h1>브라우저 새 창 열기</h1>
+	<button onclick="openWindow()">새로운 창 열기</button>
+	<button onclick="closeWindow()">새로 연 창 닫기</button>
+
+	<script>
+		var newWindowObj;
+		// 변수 strWindowFeatures를 통해 새롭게 여는 웹 브라우저 창의 옵션들을 일일이 설정할 수 있음.
+		var strWindowFeatures = "menubar = yes,location = yes,resizable = yes,scrollbars = yes,status = yes";
+		function openWindow() {
+			newWindowObj = window.open("http://tcpschool.com/html/intro", "HTML 개요", strWindowFeatures);
+		}
+
+		function closeWindow(){
+			newWindowObj.close();
+		}
+		// document 객체는 브라우저 창에 표시되는 내용에 해당하는 문서(document)를 나타내는 객체이다.
+	</script>
+	
+</body>
+
+</html>
